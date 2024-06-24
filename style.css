@@ -1,0 +1,382 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.left-section {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.pro {
+    background: blue;
+    color: white;
+    padding: 2px 6px;
+    margin-left: 8px;
+    font-size: 14px;
+    border-radius: 4px;
+    font-weight: normal;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    margin-right: 20px;
+    position: relative;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+}
+
+.nav-item:hover a::after {
+    content: "";
+    display: block;
+    height: 2px;
+    background: black;
+    transition: width 0.3s;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.dropdown {
+    display: none;
+    z-index: 1;
+    position: absolute;
+    background: white;
+    top: 100%;
+    left: 0;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+}
+
+.dropdown li {
+    padding: 0;
+}
+
+.dropdown li a {
+    display: block;
+    padding: 20px 20px;
+    text-decoration: none;
+}
+
+.dropdown li a:hover {
+    background: #f2f2f2;
+}
+
+.nav-item:hover .dropdown {
+    display: block;
+}
+
+.right-section {
+    display: flex;
+    align-items: center;
+}
+
+.right-section .icon {
+    margin-right: 10px;
+}
+
+.bell-icon {
+    width: 24px;
+    height: 24px;
+    transition: filter 0.3s;
+}
+
+.login, .signup {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 10px;
+    transition: color 0.3s;
+}
+
+.login:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+.signup {
+    color: white;
+    background: blue;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.signup:hover {
+    background: darkblue;
+    color: white;
+}
+
+.adobe-text {
+    font-size: 15px;
+    color: black;
+    font-size: large;
+}
+
+.search-bar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+}
+
+.filter-btn {
+    background: none;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.filter-btn:hover {
+    background: #f0f0f0;
+    border-color: #bbb;
+}
+
+.filter-btn img,
+.search-icon,
+.search-by-image-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+}
+
+.search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px 10px;
+    width: calc(100% - 140px);
+}
+
+.search-suggestions {
+    display: none;
+    z-index: 1;
+    position: absolute;
+    top: calc(100% + 5px); /* Add space between search bar and suggestions */
+    left: 0;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.search-suggestions li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.search-suggestions li:hover {
+    background: #f2f2f2;
+}
+
+#search-input {
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 5px;
+    font-size: 16px;
+}
+
+.search-by-image-btn {
+    background: none;
+    border: gray;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.search-by-image-btn:hover {
+    background: #f0f0f0;
+    border-radius: 8px;
+}
+
+.sort-dropdown {
+    position: relative;
+}
+
+.sort-btn {
+    background: none;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 12px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.sort-options {
+    display: none;
+    z-index: 1;
+    position: absolute;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    top: 100%;
+    right: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sort-options li {
+    padding: 0;
+}
+
+.sort-options li a {
+    display: block;
+    padding: 10px 20px;
+    color: black;
+    text-decoration: none;
+}
+
+.sort-options li a:hover {
+    background: #f2f2f2;
+}
+
+.sort-dropdown:hover .sort-options {
+    display: block;
+}
+
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    justify-content: space-around;
+}
+
+.image-card {
+    width: 23%;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.image-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.image-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: filter 0.3s;
+}
+
+.image-card:hover img {
+    filter: brightness(0.8);
+}
+
+.image-info {
+    padding: 10px;
+}
+
+
+.image-title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.image-author {
+    font-size: 14px;
+    color: #555;
+}
+
+.image-stats {
+    font-size: 12px;
+    color: #888;
+    margin-top: 5px;
+}
+
+.likes, .views {
+    margin-right: 10px;
+}
+
+.full-screen-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.full-screen-image {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.full-screen-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.recommended-btn {
+    background: none;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.recommended-btn:hover {
+    background: #f0f0f0;
+    border-color: #bbb;
+}
